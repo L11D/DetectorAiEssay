@@ -1,4 +1,7 @@
 import fire
+import torch
+import onnxruntime as rt
+
 from LiidClassifierModel import LiidClassifierModel
 import logging
 import os
@@ -10,8 +13,8 @@ class CLI(object):
     def __init__(self):
         self._model = LiidClassifierModel()
 
-    def predict(self, dataset):
-        return self._model.predict(dataset)
+    def predict(self, file_path, out_path):
+        return self._model.predict(file_path, out_path)
 
 
 if __name__ == '__main__':

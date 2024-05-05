@@ -2,7 +2,7 @@ from optimum.onnxruntime import ORTModelForSequenceClassification
 from transformers import AutoTokenizer
 import numpy as np
 
-onnx_model_path = "model.onnx"
+onnx_model_path = "onnxmodel"
 ort_model = ORTModelForSequenceClassification.from_pretrained(onnx_model_path)
 tokenizer = AutoTokenizer.from_pretrained(onnx_model_path)
 
