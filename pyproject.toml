@@ -8,22 +8,18 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 pandas = "^2.2.2"
-jupyter = "^1.0.0"
 datasets = "^2.19.0"
-torch = { version = "*", source = "pytorch" }
-torchvision = { version = "*", source = "pytorch" }
-torchaudio = { version = "*", source = "pytorch" }
-transformers = {extras = ["torch"], version = "^4.40.1"}
-scikit-learn = "^1.4.2"
+#torchvision = { version = "*", source = "pytorch" }
+#torchaudio = { version = "*", source = "pytorch" }
 onnx = "^1.16.0"
 onnxruntime = "^1.17.3"
 optimum = {extras = ["onnxruntime"], version = "^1.19.1"}
 fire = "^0.6.0"
 
-[[tool.poetry.source]]
-name = "pytorch"
-url = "https://download.pytorch.org/whl/cu118"
-priority = "explicit"
+#[[tool.poetry.source]]
+#name = "pytorch"
+#url = "https://download.pytorch.org/whl/cu118"
+#priority = "explicit"
 #default = true
 
 [build-system]

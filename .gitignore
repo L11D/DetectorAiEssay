@@ -10,7 +10,7 @@ results/
 model.onnx/
 onnxmodel/
 model/
-
+data/
 
 # Distribution / packaging
 .Python

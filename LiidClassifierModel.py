@@ -9,6 +9,7 @@ from datasets import Dataset
 
 logger = logging.getLogger(__name__)
 onnx_model_path = "onnxmodel"
+save_path = "data/results.csv"
 
 class LiidClassifierModel(object):
     """
@@ -52,9 +53,9 @@ class LiidClassifierModel(object):
         logger.info("Preprocessing data completed")
         return inputs
 
-    def predict(self, file_path, out_path):
+    def predict(self, file_path):
         """
-        Predict from data in file_path and save results to out_path
+        Predict from data in file_path and save results data
         :param file_path:
         :param out_path:
         :return:
@@ -73,9 +74,9 @@ class LiidClassifierModel(object):
         logger.info("Predicting data completed")
         predicted_labels = np.argmax(outputs.logits, axis=1)
 
-        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
         out = pd.DataFrame(data={'id': eval_df.id, 'generated': predicted_labels.tolist()})
-        out.to_csv(out_path, index=False)
-        logger.info(f'predictions saved to /{out_path}')
-        return f'predictions saved to /{out_path}'
+        out.to_csv(save_path, index=False)
+        logger.info(f'predictions saved to {save_path}')
+        return f'predictions saved to {save_path}'
