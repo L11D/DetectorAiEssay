@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "detectoraiessay"
+version = "0.1.0"
+description = ""
+authors = ["Liid <51267703+L11D@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+datasets = "^2.19.0"
+#torchvision = { version = "*", source = "pytorch" }
+#torchaudio = { version = "*", source = "pytorch" }
+onnx = "^1.16.0"
+onnxruntime = "^1.17.3"
+optimum = {extras = ["onnxruntime"], version = "^1.19.1"}
+fire = "^0.6.0"
+
+#[[tool.poetry.source]]
+#name = "pytorch"
+#url = "https://download.pytorch.org/whl/cu118"
+#priority = "explicit"
+#default = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
